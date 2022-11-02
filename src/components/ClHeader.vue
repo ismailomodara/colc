@@ -13,7 +13,7 @@
         </ul>
       </div>
       <div class="cl-header--content">
-        <h1 class="title">Easily compare income with <br >costs of living</h1>
+        <h1 class="title">An easy way to compare incomes <br >with costs of living</h1>
         <el-form class="form" :model="form" label-position="top">
           <el-form-item label="Base currency">
             <el-select v-model="currency" class="el-custom--input" placeholder="Select currency">

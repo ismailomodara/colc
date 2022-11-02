@@ -1,11 +1,11 @@
 <template>
-  <p class="el-input--value" v-if="!editing" @click="startEditing">{{ setValue }}</p>
+  <p class="el-input--value fadeIn" v-if="!editing" @click="startEditing">{{ setValue }}</p>
   <el-input
     v-else
     v-model.number="setValue"
     ref="input"
     type="text"
-    class="el-input--editable"
+    class="el-input--editable fadeIn"
     @blur="endEditing" />
 </template>
 
@@ -52,7 +52,6 @@ export default {
   color: var(--cl-text-primary);
   font-weight: 500;
   padding-left: 10px;
-  margin: 10px 0;
   font-size: 1rem;
 }
 
@@ -76,4 +75,31 @@ export default {
     }
   }
 }
+
+.fadeIn {
+  opacity: 0;
+  -webkit-animation: fadeIn 0.5s ease-out forwards;
+  animation: fadeIn 0.5s ease-out forwards;
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 </style>

@@ -83,12 +83,14 @@
 
 
 // Table
-.el-table .el-table__cell {
-  padding: 12px 0;
-}
+.el-table {
+  .el-table__cell {
+    padding: 12px 0;
+  }
 
-.el-table--enable-row-hover .el-table__body tr:hover > td.el-table__cell {
-  background-color: transparent;
+  .cell {
+    margin: 10px 0;
+  }
 }
 
 .cl-dropdown--icon {

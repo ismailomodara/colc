@@ -4,15 +4,17 @@
       <el-row type="flex">
         <el-col :span="24">
           <el-table :data="data" style="width: 100%">
-            <el-table-column label="Status" width="100">
+            <el-table-column prop="status" label="Status" width="100" :fixed="true">
               <template #default="scope">
                 <el-switch v-model="scope.row.active" :active-value="true" :inactive-value="false" />
               </template>
             </el-table-column>
-            <el-table-column prop="title" label="Activity" />
+            <el-table-column prop="title" label="Activity" min-width="200" :fixed="true" />
             <el-table-column
               v-for="(country) in countries"
-              :key="country.id">
+              :key="country.id"
+              width="200"
+            >
               <template #header>
                 <p>{{ country.name }}</p>
               </template>
