@@ -1,0 +1,16 @@
+.el-table {
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 400;
+
+  thead {
+    border-radius: 8px 0 0 8px;
+  }
+  thead,
+  th {
+    color: #B5B5C3;
+    font-size: 0.825rem;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}

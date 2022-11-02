@@ -1,0 +1,61 @@
+.el-button {
+  font-family: 'Source Sans Pro', sans-serif;
+  border: none;
+  display: inline-flex;
+
+  span {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+
+    + i {
+      margin-left: 5px !important;
+    }
+
+    i {
+      margin-right: 5px !important;
+    }
+
+    img {
+      height: 15px;
+      width: auto;
+      margin-left: 5px;
+      margin-top: 1px;
+    }
+  }
+
+  i {
+    font-size: 0.875rem;
+
+    + span {
+      margin-left: 5px;
+    }
+  }
+
+  &--primary {
+    color: var(--ug-white);
+
+    &.is-plain {
+      &:focus,
+      &:hover {
+        color: var(--ug-black-primary) !important;
+        background: #e6eef6 ;
+      }
+    }
+  }
+
+  &--plain {
+
+  }
+
+  &--link {
+    padding-top: 0;
+    padding-bottom: 0;
+    background: none !important;
+  }
+
+  &--large {
+    padding: 12px 25px;
+  }
+}

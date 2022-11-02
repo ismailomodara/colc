@@ -1,0 +1,85 @@
+@import "elementplus/el-variables";
+@import "elementplus/el-button";
+@import "elementplus/el-dropdown";
+@import "elementplus/el-form";
+@import "elementplus/el-table";
+
+
+// Container
+.el-container {
+  display: block;
+  width: 100%;
+  max-width: 80%;
+  margin: auto;
+
+  @media (min-width: 1440px) {
+    max-width: 1200px;
+  }
+}
+
+
+// Input
+.el-custom--input {
+  .el-input__wrapper {
+    background-color: var(--cl-white);
+    color: var(--cl-text-primary);
+    height: 60px;
+    font-family: 'Figtree', sans-serif;
+    box-shadow: 0 0 0 1px var(--cl-input-border, var(--cl-input-border)) inset;
+    transition: box-shadow 0.25s ease-out;
+
+    .el-input__inner {
+      font-weight: 600;
+      font-size: 1.125rem;
+      font-family: "Figtree", sans-serif;
+      color: var(--cl-text-primary);
+      background-color: var(--cl-white);
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 1px var(--cl-grey-nonary, var(--cl-grey-nonary)) inset;
+      transition: box-shadow 0.25s ease-in;
+    }
+
+    &.is-focus {
+      box-shadow: 0 0 0 1px var(--cl-grey-quaternary, var(--cl-grey-quaternary)) inset;
+      transition: box-shadow 0.25s ease-in;
+    }
+  }
+}
+.el-input {
+  &__prefix {
+    left: 10px;
+
+    i {
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+
+.cl-dropdown--icon {
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  font-size: 0.75rem;
+  background-color: transparent;
+  transition: background-color 0.25s ease-in;
+
+  i {
+    color: var(--cl-grey-quaternary);
+  }
+
+  &:hover {
+    background-color: var(--cl-blue-senary);
+    transition: background-color 0.25s ease-in;
+
+    i {
+      color: var(--cl-black-primary);
+      transition: color 0.25s ease-in;
+    }
+  }
+}
