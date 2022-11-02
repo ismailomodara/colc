@@ -1,15 +1,15 @@
 <template>
   <cl-header />
-  <cl-colic-table />
+  <cl-table />
 </template>
 
 <script>
 import ClHeader from '@/components/ClHeader'
-import ClColicTable from '@/components/ClColicTable'
+import ClTable from '@/components/ClTable'
 
 export default {
   name: 'AppIndex',
-  components: { ClColicTable, ClHeader },
+  components: { ClTable, ClHeader },
   data () {
     return {
       form: {
