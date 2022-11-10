@@ -1,50 +1,61 @@
 <template>
-  <p class="el-input--value fadeIn" v-if="!editing" @click="startEditing">{{ setValue }}</p>
+  <p class="el-input--value fadeIn" v-if="!editing" @click="startEditing">
+    {{ setValue }}
+  </p>
   <el-input
     v-else
-    v-model.number="setValue"
+    v-model="setValue"
     ref="input"
     type="text"
     class="el-input--editable fadeIn"
-    @blur="endEditing" />
+    @keydown="validateAmount"
+    @blur="endEditing"
+  />
 </template>
 
 <script>
+import { validateAmount } from "@/utils";
+
 export default {
-  name: 'ClTableCell',
+  name: "ClTableCell",
   props: {
     value: {
       type: [String, Number],
-      default: null
-    }
+      default: null,
+    },
   },
-  data () {
+  data() {
     return {
-      editing: false
-    }
+      editing: false,
+    };
   },
   computed: {
     setValue: {
-      get () {
-        return this.value
+      get() {
+        return this.value;
       },
-      set (value) {
-        this.$emit('update:value', value)
-      }
-    }
+      set(value) {
+        this.$emit("update:value", value);
+      },
+    },
   },
   methods: {
-    startEditing () {
-      this.editing = true
+    startEditing() {
+      this.editing = true;
       setTimeout(() => {
-        this.$refs.input.focus()
-      }, 100)
+        this.$refs.input.focus();
+      }, 100);
     },
-    endEditing () {
-      this.editing = false
-    }
-  }
-}
+    validateAmount,
+    endEditing() {
+      if (!this.setValue) {
+        this.setValue = 0;
+      }
+      this.$emit("updated");
+      this.editing = false;
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -53,6 +64,7 @@ export default {
   font-weight: 500;
   padding-left: 10px;
   font-size: 1rem;
+  line-height: 40px;
 }
 
 .el-input--editable {
@@ -61,7 +73,7 @@ export default {
     color: var(--cl-text-primary);
     height: 40px;
     border-radius: 0;
-    font-family: 'Figtree', sans-serif;
+    font-family: "Figtree", sans-serif;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.25s ease-out;
 
@@ -75,31 +87,4 @@ export default {
     }
   }
 }
-
-.fadeIn {
-  opacity: 0;
-  -webkit-animation: fadeIn 0.5s ease-out forwards;
-  animation: fadeIn 0.5s ease-out forwards;
-  -webkit-animation-delay: 0.1s;
-  animation-delay: 0.1s;
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 </style>

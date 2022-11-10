@@ -1,25 +1,29 @@
 <template>
-  <cl-header />
-  <cl-table />
+  <cl-header @update-base-information="updateBaseInformation" />
+  <cl-table :base-information="baseInformation" />
 </template>
 
 <script>
-import ClHeader from '@/components/ClHeader'
-import ClTable from '@/components/ClTable'
+import ClTable from "@/components/Home/ClTable";
+import ClHeader from "@/components/Home/ClHeader";
 
 export default {
-  name: 'AppIndex',
-  components: { ClTable, ClHeader },
-  data () {
+  name: "AppIndex",
+  components: {
+    ClHeader,
+    ClTable,
+  },
+  data() {
     return {
-      form: {
-        currency: null
-      }
-    }
-  }
-}
+      baseInformation: null
+    };
+  },
+  methods: {
+    updateBaseInformation(information) {
+      this.baseInformation = information;
+    },
+  },
+};
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

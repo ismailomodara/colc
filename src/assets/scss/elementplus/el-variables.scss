@@ -2,7 +2,7 @@
 // Colors
 $--colors: (
     "primary": (
-        "base": #141414,
+        "base": #04395E,
     ),
     "success": (
         "base": #21ba45,
@@ -46,7 +46,7 @@ $--border-radius: (
   $colors: $--colors,
   $common-component-size: $--component-size,
   $border-radius: $--border-radius,
-  $button-padding-horizontal: ("default": 8px)
+  $button-padding-horizontal: ("default": 20px)
 );
 
 // ElementPlus Style

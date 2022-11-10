@@ -20,6 +20,7 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-standard": "^6.1.0",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.25.3",
@@ -36,7 +37,7 @@
     },
     "extends": [
       "plugin:vue/vue3-essential",
-      "@vue/standard"
+      "@vue/prettier"
     ],
     "parserOptions": {
       "parser": "@babel/eslint-parser"
