@@ -8,10 +8,12 @@ import ClNavigation from "@/components/ClNavigation";
 
 import DefaultLayout from "@/layouts/default.vue";
 import AppLayout from "@/layouts/app.vue";
+import AuthXWidget from "@/components/AuthXWidget";
 
 export default {
   name: "App",
   components: {
+    AuthXWidget,
     ClNavigation,
     DefaultLayout,
     AppLayout,

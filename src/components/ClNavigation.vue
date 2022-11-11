@@ -4,6 +4,9 @@
       <img src="../assets/images/colic.svg" alt="C" />
       <ul>
         <li>
+          <span @click="login">Try AuthX</span>
+        </li>
+        <li>
           <a
             href="https://twitter.com/edemkumodzi/status/1587379149655928833"
             target="_blank"
@@ -18,6 +21,11 @@
 <script>
 export default {
   name: "ClNavigation",
+  methods: {
+    login() {
+      window["authx"].initiateSession();
+    },
+  },
 };
 </script>
 
@@ -50,10 +58,12 @@ nav {
     display: flex;
     align-items: center;
 
+    li span,
     li a {
       text-decoration: underline;
       padding: 10px 30px;
       color: #ffffff;
+      cursor: pointer;
 
       &:last-child {
         padding-right: 0;
